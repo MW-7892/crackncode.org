@@ -24,14 +24,15 @@
   class="flex flex-row justify-between items-center p-4 rwidth mx-auto select-none"
 >
   <div class="left">
-    <a href="/">
+    <a href="/" class="flex flex-row items-center gap-3">
       <img
         class="cursor-pointer"
-        width="96"
+        width="32"
         src="crackncode.webp"
         alt="crack n code logo"
       />
-    </a>
+      <b>CRACK 'N' CODE</b>
+    </a> 
   </div>
 
   <!-- Desktop Nav -->
@@ -40,13 +41,13 @@
   >
     {#each Object.entries(routes) as [url, name]}
       <a
-        class="text-xl {(
+        class="text-lg {(
           url == '/'
             ? $page.url.pathname == '/'
             : $page.url.pathname == '/' + url
         )
           ? 'bg-slate-800 cursor-default'
-          : 'hover:bg-slate-700'} p-2 rounded transition-all"
+          : 'hover:bg-slate-700'} px-2 py-1 rounded transition-all"
         href={url}
       >
         {name}
@@ -66,6 +67,7 @@
     class="bg-slate-800 rounded absolute top-4 p-2 flex flex-col {popup
       ? 'right-2 opacity-100'
       : '-right-28 opacity-0'} transition-all"
+    style="z-index: 2;"
   >
     {#each Object.entries(routes) as [url, name]}
       <a
